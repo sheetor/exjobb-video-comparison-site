@@ -1,10 +1,10 @@
 .grid {
     display: flex;
-    flex-direction: row;
-    align-items: left;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 100%;
+    width: 100%;
   }
   
   .card {
@@ -18,6 +18,10 @@
     
 /*     transition: color 0.15s ease, border-color 0.15s ease;*/    
 
+  }
+  .flex_row{
+    display: flex;
+    flex-direction: row;
   }
 
   .h2{
@@ -36,3 +40,159 @@
     font-size: large;
     border-radius: 15px;
   }
+
+  .carousel {
+    position: relative;
+    display: flex;
+    height: 700px;
+    width: 100%;
+    margin: 2em auto;
+    z-index: 50;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel > * {
+    z-index: inherit;
+  }
+  .carousel > .Image {
+    width: 100%;
+    height: 100%;
+  }
+  .carousel__nav {
+    background-color: rgba(0, 0, 0, 0.514);
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin-bottom: 8px;
+  }
+  .carousel__indicator {
+    border: 0;
+    border-radius: 20%;
+    width: 16px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.062);
+    margin: 0 10px;
+  }
+  .carousel__slide {
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+  .carousel__slide > p {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    word-wrap: break-word;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* number of lines to show */
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    color: rgb(255, 255, 255);
+  }
+  .carousel__slide > h3 {
+    color: white;
+    font-size: 30px;
+  }
+  .carousel__slide > a {
+    color: white;
+  }
+  .carousel__slide[data-visible=false] {
+    display: None;
+  }
+  .carousel__slide[data-visible=true] {
+    display: flex;
+  }
+  .carousel__button {
+    z-index: 200 !important;
+    position: absolute;
+    top: 50%;
+    height: 100%;
+    transform: translateY(-50%);
+    width: 6%;
+  }
+  .carousel__button_left {
+    left: 0;
+  }
+  .carousel__button_right {
+    right: 0;
+  }
+  .carousel__button:hover {
+    background-color: rgba(0, 0, 0, 0.089);
+    transition: background-color ease-in 200ms;
+  }
+  .carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel__track__container {
+    background-color: rgb(22, 25, 48);
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  @media screen and (max-width: 645px) {
+    .carousel__slide {
+      width: 75%;
+    }
+    .carousel__slide > p {
+      font-size: 19px;
+    }
+    .carousel__slide > h3 {
+      font-size: 29px;
+    }
+    .carousel__button {
+      display: none;
+    }
+    .carousel__button_left {
+      left: 0;
+    }
+    .carousel__button_right {
+      right: 0;
+    }
+    .carousel__button:hover {
+      background-color: rgba(0, 0, 0, 0.089);
+      transition: background-color ease-in 200ms;
+    }
+  }
+  
+  .active {
+    background-color: rgba(255, 255, 255, 0.747);
+  }
+  
+  .fade {
+    -webkit-animation-name: fade;
+            animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }/*# sourceMappingURL=News.module.css.map */

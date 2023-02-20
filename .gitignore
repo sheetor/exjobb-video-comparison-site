@@ -4,20 +4,22 @@
 /node_modules
 /.pnp
 .pnp.js
+/public
 
-# testing
+# # testing
 /coverage
 
-# next.js
+# # next.js
 /.next/
 /out/
 
+
 # production
-/build
+# /build
 
 # misc
-.DS_Store
-*.pem
+# .DS_Store
+# *.pem
 
 # debug
 npm-debug.log*
@@ -26,7 +28,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env*.local
+# .env*.local
 
-# vercel
-.vercel
+# # vercel
+# .vercel

@@ -1,23 +1,19 @@
-import React from 'react';
-import VideoForm from './Video-Form';
-import {server} from '../config'
+import React from "react";
 
-const VideoPage = () => {
-  const [videos, setVideos] = React.useState([]);
-
-  const fetchVideos = async () => {
-    const res = await fetch(`${server}/public/videos`);
-    const data = await res.json();
-    setVideos(data);
-  };
-  React.useEffect(() => {
-    const getVids = async () =>{
-      await fetchVideos()
-    }
-    //fetchVideos();
-  }, []);
-
-  return <VideoForm videos={videos} />;
+const VideoPage = ({ video }) => {
+  return (
+    <>
+      <video
+        autoPlay
+        controls
+        loop
+        muted
+        style={{ width: "auto", height: "425px" }}
+      >
+        <source src={`${video.url}`} />
+      </video>
+    </>
+  );
 };
 
 export default VideoPage;
