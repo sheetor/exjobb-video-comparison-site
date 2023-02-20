@@ -2,6 +2,7 @@ import gridStyle from "../styles/Grid.module.css";
 import VideoPage from "./Video";
 
 export const VideoSlide = ({ videoSet, index }) => {
+  //VideoSlide renders the video pair given.
   return (
     <>
       {videoSet.map((video, vidIndex) => {
@@ -16,9 +17,10 @@ export const VideoSlide = ({ videoSet, index }) => {
                 type="radio"
                 name={`pair${index}`}
                 value={video.id}
+                className={gridStyle.inputsu}
                 required
               />
-              <label>{video.title}</label>
+              <label className={gridStyle.label}>{video.title}</label>
             </div>
           </div>
         );
