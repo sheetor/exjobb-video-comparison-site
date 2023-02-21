@@ -28,7 +28,9 @@ export default function Home({ articles }) {
       body: JSON.stringify({ answers }),
       headers: { "Content-type": "application/json" },
     };
-    const response = await fetch(`${server}/api/data`, options);
+    const response = await fetch(`${server}/api/data`, options).catch((err) =>
+      console.log(err)
+    );
     const data = await response.json();
     console.log(data);
 
