@@ -56,6 +56,7 @@ export default function Home({ articles }) {
             setCounter(0);
             e.target.reset();
             setAnswers({});
+            setCansubmit(false);
           } catch (error) {
             console.log(error);
           }
