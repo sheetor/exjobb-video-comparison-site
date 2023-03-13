@@ -31,7 +31,7 @@ export default function Home({ articles }) {
       
     };
     //const response = await fetch(`${server}/api/data`, options);
-    const response = await fetch(`/api/data`, options);
+    const response = await fetch(`src/routes/api`, options);
     if (!response.ok) {
       throw new Error(response.statusText);
     }
