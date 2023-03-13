@@ -25,8 +25,10 @@ export default function Home({ articles }) {
     e.preventDefault();
     const options = {
       method: "POST",
-      body: JSON.stringify({ answers }),
+      mode: 'cors',
       headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ answers }),
+      
     };
     const response = await fetch(`${server}/api/data`, options);
     if (!response.ok) {
