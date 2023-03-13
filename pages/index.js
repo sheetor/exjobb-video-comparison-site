@@ -25,7 +25,7 @@ export default function Home({ articles }) {
     e.preventDefault();
     const options = {
       method: "POST",
-      mode: 'cors',
+      
       headers: { "Content-type": "application/json" },
       body: JSON.stringify({ answers }),
       
