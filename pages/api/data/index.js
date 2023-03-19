@@ -1,7 +1,7 @@
 export default function handler(req, res) {
   res.status(200).json({ text: 'Hello' });
 }
-/* import { answFunc } from "../../data/index";
+/* import { answFunc } from "../../../data/";
 
 
 export default async function handler(req, res) {
