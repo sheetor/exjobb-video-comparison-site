@@ -1,7 +1,4 @@
-export default function handler(req, res) {
-  res.status(200).json({ text: 'Hello' });
-}
-/* import { answFunc } from "../../../data/";
+import { answFunc } from "../../../data/";
 
 
 export default async function handler(req, res) {
@@ -18,4 +15,3 @@ export default async function handler(req, res) {
   const savedContacts = await answFunc.create(out);
   res.status(201).json(savedContacts);
 }
- */
