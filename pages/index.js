@@ -30,8 +30,8 @@ export default function Home({ articles }) {
       body: JSON.stringify({ answers }),
       
     };
-    //const response = await fetch(`${server}/api/data`, options);
-    const response = await fetch(`src/routes/api`, options);
+    const response = await fetch(`${server}/api/data`, options);
+    //const response = await fetch(`src/routes/api`, options);
     if (!response.ok) {
       throw new Error(response.statusText);
     }
