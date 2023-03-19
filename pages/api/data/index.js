@@ -1,4 +1,4 @@
-import { answFunc } from "../../../data";
+import { answFunc } from "../../data";
 
 
 export default async function handler(req, res) {
