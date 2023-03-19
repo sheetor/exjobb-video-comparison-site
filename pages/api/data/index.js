@@ -1,4 +1,7 @@
-import { answFunc } from "../../../anotherPrismaFolder";
+export default function handler(req, res) {
+  res.status(200).json({ name: 'John Doe' })
+}
+/* import { answFunc } from "../../../anotherPrismaFolder";
 
 
 export default async function handler(req, res) {
@@ -15,3 +18,4 @@ export default async function handler(req, res) {
   const savedContacts = await answFunc.create(out);
   res.status(201).json(savedContacts);
 }
+ */
