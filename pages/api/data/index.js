@@ -1,4 +1,4 @@
-import { answFunc } from "../../../data/";
+import { answFunc } from "../../../anotherPrismaFolder";
 
 
 export default async function handler(req, res) {
