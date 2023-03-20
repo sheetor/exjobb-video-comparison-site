@@ -1,4 +1,4 @@
-import ArticleItem from './ArticleItem'
+/* import ArticleItem from './ArticleItem'
 import articleStyles from '../styles/Article.module.css'
 import Form from './Form'
 
@@ -15,4 +15,4 @@ const ArticleList = ( {articles} ) => {
     )
 }
 
-export default ArticleList
+export default ArticleList */
