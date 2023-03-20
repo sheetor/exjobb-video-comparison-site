@@ -20,19 +20,22 @@ export default function Home({ articles }) {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const saveAnswers = async (e) => {
     //submit shit
     e.preventDefault();
     const options = {
       method: "POST",
-      body: JSON.stringify({ answers }),
+      
       headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ answers }),
+      
     };
-    const response = await fetch(`${server}/api/data`, options).catch((err) =>
-      console.log(err)
-    );
-    const data = await response.json();
-    console.log(data);
+    const response = await fetch(`${server}/api/data/`, options);
+    //const response = await fetch(`src/routes/api`, options);
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+    return await response.json();
 
     //adda en datafolder med data.js || data.json  o lägg till svar där. chatGPT
   };
@@ -48,7 +51,20 @@ export default function Home({ articles }) {
 
   return (
     <>
-      <form className={gridStyle["grid"]} onSubmit={handleSubmit}>
+      <form
+        className={gridStyle["grid"]}
+        onSubmit={async (e) => {
+          try {
+            await saveAnswers(e);
+            setCounter(0);
+            e.target.reset();
+            setAnswers({});
+            setCansubmit(false);
+          } catch (error) {
+            console.log(error);
+          }
+        }}
+      >
         <FormSet
           videoPairs={videoList}
           handleRadio={handleRadioChange}
