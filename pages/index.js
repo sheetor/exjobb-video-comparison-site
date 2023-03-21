@@ -15,7 +15,7 @@ export default function Home({ articles }) {
     e.preventDefault();
     setCounter(counter + 1);
     console.log("Selected video:", answers);
-    if (!(counter < videoList.length)) {
+    if (!(counter < videoList.length-1)) {
       setCansubmit(true);
     }
   };
