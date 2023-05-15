@@ -8,8 +8,7 @@ import VideoPage from "./Video";
 export const FormSet = ({ videoPairs, handleRadio, counter, pairs }) => {
 
   //FormSet takes the videos and displays them so that only ONE PAIR is shown at a time.
-  console.log(pairs);
-  console.log("pairs");
+
 
 
   return (
