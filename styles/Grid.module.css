@@ -8,6 +8,8 @@
   }
   
   .card {
+    display: flex;
+    flex-direction: column;
     margin: 1rem;
     padding: 1.5rem;
     text-align: left;
@@ -34,6 +36,8 @@
     width: 100%;
     margin-top: 1em;
     padding-left: 1em;
+    height: 30px;
+    justify-content: center;
   }
   .inputsu{
     width: 30px;
@@ -55,7 +59,7 @@
   .carousel {
     position: relative;
     display: flex;
-    height: 700px;
+    height: auto;
     width: 100%;
     margin: 2em auto;
     z-index: 50;
@@ -86,11 +90,11 @@
   }
   .carousel__slide {
     z-index: 100;
-    position: absolute;
     width: 100%;
     padding: 0;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 
   }
   .carousel__slide > p {
@@ -154,9 +158,66 @@
     flex-wrap: wrap;
     flex-direction: column;
   }
-  @media screen and (max-width: 645px) {
+  @media screen and (max-width: 1000px) {
+    .card{
+      margin: 0;
+      padding: 0;
+      margin-bottom: 1em;
+
+    }
+
+    .carousel__slide video{
+      width: 95% !important;
+      height: auto !important;
+      justify-self: center;
+      align-self: center;
+    }
+
     .carousel__slide {
-      width: 75%;
+      width: 100%;
+      flex-direction: column;
+      height: auto;
+
+    }
+    .carousel__slide > p {
+      font-size: 19px;
+    }
+    .carousel__slide > h3 {
+      font-size: 29px;
+    }
+    .carousel__button {
+      display: none;
+    }
+    .carousel__button_left {
+      left: 0;
+    }
+    .carousel__button_right {
+      right: 0;
+    }
+    .carousel__button:hover {
+      background-color: rgba(0, 0, 0, 0.089);
+      transition: background-color ease-in 200ms;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+
+    .card{
+      margin: 0;
+      padding: 0;
+      margin-bottom: 1em;
+    }
+
+    .carousel__slide video{
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    .carousel__slide {
+      width: 100%;
+      flex-direction: column;
+      height: auto;
+
     }
     .carousel__slide > p {
       font-size: 19px;

@@ -5,6 +5,9 @@ export const VideoSlide = ({ videoSet, index }) => {
   //VideoSlide renders the video pair given.
   return (
     <>
+    {/* {console.log(videoSet)}
+    {console.log(index)}
+    {console.log("video")} */}
       {videoSet.map((video, vidIndex) => {
         //... takes that pair to render,
         return (
@@ -25,6 +28,8 @@ export const VideoSlide = ({ videoSet, index }) => {
           </div>
         );
       })}
+      {/* {console.log(videoSet)}
+      {console.log("videoSet")} */}
     </>
   );
 };
