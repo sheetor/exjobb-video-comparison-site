@@ -89,7 +89,7 @@ export default function Home({ articles }) {
       Welcome message!
     </h3>
     <p>
-      You're going to compare and choose a video which is TBD on wording
+      You are going to compare 10 pairs of videos and choose a video from each pair which you find to be more ´realistic?´ 
     </p>
     <button onClick={beginForm}>Begin Form</button>
   </div>)
