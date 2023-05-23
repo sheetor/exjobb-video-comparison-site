@@ -93,15 +93,15 @@ export default function Home({ articles }) {
       Thank you for participating in this study!
     </h3>
     <p>
-      You will be shown a series of videos simulating a chain of boxes, consisting of a varying number of boxes. The last box has a weight equivalent to 100x of all previous boxes.
+      You will be shown a series of videos simulating a chain of boxes.
     </p>  
     <p>
-      After watching a pair, please select the video that you feel has the most physically accurate motion and click the Next button to move on. After reaching the end, dont forget to click Submit!
+      Please select the video that you feel has the most realistic looking motion and click the Next button to move on. After reaching the end, dont forget to click Submit!
     </p>
     <p>
-      This study is estimated to take at least around 20 minutes.
+      This study is estimated to take around 20 minutes.
     </p>
-    <button onClick={beginForm}>Begin Form</button>
+    <button onClick={beginForm}>Begin Study</button>
   </div>)
 
   function refreshpage(){
