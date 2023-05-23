@@ -16,7 +16,7 @@ export default function Home({ articles }) {
   const [pairs, setPairs] = useState(null);
   
 
-  const pairGen = (antalPairs = 10, selectionSize = 16) => {
+  const pairGen = (antalPairs = 10, selectionSize = 15) => {
     const pairList = [];
     const usedPairs = new Set();
 
@@ -69,15 +69,19 @@ export default function Home({ articles }) {
 
     //adda en datafolder med data.js || data.json  o lägg till svar där. chatGPT
   };
-  const handleRadioChange = (e) => {
+  const handleRadioChange = (e,pairs) => {
     const { name, value } = e.target;
+    const notSelected = pairs.findIndex((element) => parseInt(element)!==parseInt(value))
+    const newValue = [value, pairs[notSelected]];
     setAnswers((prev) => {
-      return { ...prev, [name]: value };
+      return { ...prev, [name]: newValue };
     });
     setSelectedOption(e.target.value);
     //setSelectedVideo(e.target.value);
-
+    /* console.log(pairs);
+    console.log(newValue);
     console.log(e.target.value);
+     */
     console.log(answers);
   };
   
@@ -86,14 +90,23 @@ export default function Home({ articles }) {
   }
   const welcome = (<div>
     <h3>
-      Welcome message!
+      Thank you for participating in this study!
     </h3>
     <p>
-      You are going to compare 10 pairs of videos and choose a video from each pair which you find to be more ´realistic?´ 
+      You will be shown a series of videos simulating a chain of boxes, consisting of a varying number of boxes. The last box has a weight equivalent to 100x of all previous boxes.
+    </p>  
+    <p>
+      After watching a pair, please select the video that you feel has the most physically accurate motion and click the Next button to move on. After reaching the end, dont forget to click Submit!
+    </p>
+    <p>
+      This study is estimated to take at least around 20 minutes.
     </p>
     <button onClick={beginForm}>Begin Form</button>
   </div>)
 
+  function refreshpage(){
+    window.location.reload(false);
+  }
   return (
     <>
       <form
@@ -101,10 +114,11 @@ export default function Home({ articles }) {
         onSubmit={async (e) => {
           try {
             await saveAnswers(e);
-            setCounter(0);
+            refreshpage();
+            /* setCounter(0);
             e.target.reset();
             setAnswers({});
-            setCansubmit(false);
+            setCansubmit(false); */
           } catch (error) {
             console.log(error);
           }

@@ -25,7 +25,7 @@ export const FormSet = ({ videoPairs, handleRadio, counter, pairs }) => {
           // and display the one which is true.
           return (
             <div
-              onChange={handleRadio}
+              onChange={(e) => {handleRadio(e, [videoPairs[indexPairs[0]].id,videoPairs[indexPairs[1]].id])}}
               className={`${gridStyle["carousel__slide"]} ${gridStyle.fade}`}
               data-visible={counter === index}
               key={index}
