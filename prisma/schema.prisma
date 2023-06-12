@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = "mysql://exjobb:SkolLösenforTheDB_gigaSafe%3F@83.233.218.2:3306/test_schema"
 
 }
 
@@ -15,4 +15,10 @@ model UserAnswers {
   id      Int      @id @default(autoincrement())
   date    DateTime @db.DateTime()
   answers Json
+}
+
+model UserComments {
+  id      Int      @id @default(autoincrement())
+  date    DateTime @db.DateTime()
+  answers String   
 }

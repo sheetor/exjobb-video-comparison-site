@@ -1,14 +1,13 @@
 import { server } from "../config";
 import gridStyle from "../styles/Grid.module.css";
-
+import Router, { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-
 //import { videoList } from "../videoList";
 import { non_pair_list } from "../videoList";
-
 import { FormSet } from "../components/FormSet";
 
 export default function Home({ articles }) {
+  const router = useRouter();
   const [counter, setCounter] = useState(0);
   const [answers, setAnswers] = useState({});
   const [canSubmit, setCansubmit] = useState(false);
@@ -16,7 +15,7 @@ export default function Home({ articles }) {
   const [pairs, setPairs] = useState(null);
   
 
-  const pairGen = (antalPairs = 10, selectionSize = 15) => {
+  const pairGen = (antalPairs = 10, selectionSize = 20) => {
     const pairList = [];
     const usedPairs = new Set();
 
@@ -65,8 +64,8 @@ export default function Home({ articles }) {
     if (!response.ok) {
       throw new Error(response.statusText);
     }
-    return await response.json();
-
+    await response.json();
+    router.push("/thoughts")
     //adda en datafolder med data.js || data.json  o lägg till svar där. chatGPT
   };
   const handleRadioChange = (e,pairs) => {
@@ -114,7 +113,8 @@ export default function Home({ articles }) {
         onSubmit={async (e) => {
           try {
             await saveAnswers(e);
-            refreshpage();
+            router.push("/thoughts")
+            //refreshpage();
             /* setCounter(0);
             e.target.reset();
             setAnswers({});

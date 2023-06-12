@@ -9,12 +9,14 @@ export default async function handler(req, res) {
     res.status(405).json({ message: "We don't do that here!" });
   }
   const date = new Date();
-  const answers = req.body.answers;
+  const answers = req.body;
+  //console.log(req);
   const out = {
     date: date,
     answers: answers,
   };
 
-  const savedContacts = await answFunc.createAnswers(out);
+  const savedContacts = await answFunc.createComments(out);
+  console.log(savedContacts);
   res.status(201).json(savedContacts);
 }
