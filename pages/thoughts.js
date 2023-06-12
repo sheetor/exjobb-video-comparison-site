@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { server } from "../config";
 import gs from "../styles/Grid.module.css";
-const thoughts = () => {
+const Thoughts = () => {
     const [answers, setAnswers] = useState("")
     const [submitted, setSubmitted] = useState(false)
     const saveAnswers = async (e) => {
@@ -51,4 +51,4 @@ const thoughts = () => {
         </>
     )
 }
-export default thoughts;
+export default Thoughts;
